@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_Radio
+  File name(文件名): test3
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/27
+  Time(创建时间)： 19:51
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <el-radio @change="change" v-model="radio" label="1" :disabled="status">选项1</el-radio>
+    <el-radio @change="change" v-model="radio" label="2" :disabled="status">选项2</el-radio>
+    <el-radio @change="change" v-model="radio" label="3" :disabled="status">选项3</el-radio>
+    <el-radio @change="change" v-model="radio" label="4" :disabled="status">选项4</el-radio>
+    <el-radio @change="change" v-model="radio" label="5" :disabled="status">选项5</el-radio>
+    <el-radio @change="change" v-model="radio" label="6" :disabled="status">选项6</el-radio>
+    <el-radio @change="change" v-model="radio" label="7" :disabled="status">选项7</el-radio>
+
+    <br>
+    <br>
+    <el-button @click="clicks" :type="status?'warning':'success'">{{status?"点击更改成启用":"点击更改成禁用"}}</el-button>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            radio: "2",
+            status: false
+        },
+        methods: {
+            change: function ()
+            {
+                console.log(this.radio)
+            },
+            clicks: function ()
+            {
+                this.status = !this.status;
+            }
+        },
+    })
+</script>
+</body>
+</html>
