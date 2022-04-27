@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_Radio
+  File name(文件名): test7
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/27
+  Time(创建时间)： 20:12
+  Description(描述)：
+
+Radio Attributes
+参数	说明	类型	可选值	默认值
+value / v-model	绑定值	string / number / boolean	—	—
+label	Radio 的 value	string / number / boolean	—	—
+disabled	是否禁用	boolean	—	false
+border	是否显示边框	boolean	—	false
+size	Radio 的尺寸，仅在 border 为真时有效	string	medium / small / mini	—
+name	原生 name 属性	string	—	—
+¶Radio Events
+事件名称	说明	回调参数
+change	绑定值变化时触发的事件	选中的 Radio label 值
+¶Radio-group Attributes
+参数	说明	类型	可选值	默认值
+value / v-model	绑定值	string / number / boolean	—	—
+size	单选框组尺寸，仅对按钮形式的 Radio 或带有边框的 Radio 有效	string	medium / small / mini	—
+disabled	是否禁用	boolean	—	false
+text-color	按钮形式的 Radio 激活时的文本颜色	string	—	#ffffff
+fill	按钮形式的 Radio 激活时的填充色和边框色	string	—	#409EFF
+¶Radio-group Events
+事件名称	说明	回调参数
+change	绑定值变化时触发的事件	选中的 Radio label 值
+¶Radio-button Attributes
+参数	说明	类型	可选值	默认值
+label	Radio 的 value	string / number	—	—
+disabled	是否禁用	boolean	—	false
+name	原生 name 属性	string	—	—
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+    <div id="app">
+        <el-radio-group v-model="radio" :disabled="false" text-color="red" @change="change">
+            <el-radio-button label="1" :border="true">选项1</el-radio-button>
+            <el-radio-button label="2" :border="true">选项2</el-radio-button>
+            <el-radio-button label="3" :border="true">选项3</el-radio-button>
+            <el-radio-button label="4" :border="true">选项4</el-radio-button>
+        </el-radio-group>
+        <br>
+        <br>
+        <br>
+        <el-radio-group v-model="radio2" @change="change2" fill="skyblue" text-color="#00ff00">
+            <el-radio-button label="5" :border="true">选项5</el-radio-button>
+            <el-radio-button label="6" :border="true">选项6</el-radio-button>
+            <el-radio-button label="7" :border="true">选项7</el-radio-button>
+            <el-radio-button label="8" :border="true">选项8</el-radio-button>
+        </el-radio-group>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                radio: "2",
+                radio2: "1",
+            },
+            methods: {
+                change: function ()
+                {
+                    console.log(this.radio)
+                },
+                change2: function ()
+                {
+                    console.log(this.radio2)
+                },
+            },
+        })
+    </script>
+</body>
+</html>

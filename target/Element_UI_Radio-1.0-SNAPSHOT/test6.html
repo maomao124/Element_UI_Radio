@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_Radio
+  File name(文件名): test6
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/27
+  Time(创建时间)： 20:09
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <el-radio-group v-model="radio" @change="change">
+        <el-radio label="1" :border="true">选项1</el-radio>
+        <el-radio label="2" :border="true">选项2</el-radio>
+        <el-radio label="3" :border="true">选项3</el-radio>
+        <el-radio label="4" :border="true">选项4</el-radio>
+    </el-radio-group>
+    <br>
+    <br>
+    <br>
+    <el-radio-group v-model="radio2" @change="change2">
+        <el-radio label="5" :border="true">选项5</el-radio>
+        <el-radio label="6" :border="true">选项6</el-radio>
+        <el-radio label="7" :border="true">选项7</el-radio>
+        <el-radio label="8" :border="true">选项8</el-radio>
+    </el-radio-group>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            radio: "2",
+            radio2: "1",
+        },
+        methods: {
+            change: function ()
+            {
+                console.log(this.radio)
+            },
+            change2: function ()
+            {
+                console.log(this.radio2)
+            },
+        },
+    })
+</script>
+</body>
+</html>
